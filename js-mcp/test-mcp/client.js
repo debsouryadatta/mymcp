@@ -29,7 +29,7 @@ async function main() {
     }
   }
   
-  // 从配置文件创建客户端
+  // Create client from config
   const client = MCPClient.fromConfig( config );
 
   try { 
@@ -40,7 +40,7 @@ async function main() {
         openAIApiKey: openAIApiKey,
         configuration: {
           baseURL: 'https://openrouter.ai/api/v1'
-        }
+        },
       }
     );
     let options = {
@@ -50,22 +50,26 @@ async function main() {
       llm:  chat,
     }
     let agent = new MCPAgent(options)
+    let messages = [
+      {
+        role: "user",
+        content: "My name is neel"
+      },
+      {
+        role: "user",
+        content: "How many tools do I have on n8n? And what are those?"
+      }
+    ]
 
-    let result = await agent.run(
-      `
-      what are my todos?
-      ` 
-    );
+    let result = await agent.run(messages);
 
     console.log("Result:", JSON.stringify(result) );
     console.log("Result:", result.output );
   } finally {
     // Properly terminate the process after execution
     console.info('Terminating process...');
-    // Give some time for any pending operations to complete
-    setTimeout(() => {
-      process.exit(0);
-    }, 1000);
+    await client.closeAllSessions();
+    process.exit(0);
   }
 }
 
