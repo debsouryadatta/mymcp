@@ -1,0 +1,323 @@
+2025-04-20T17:33:58.191Z - mcp_use - INFO - 🚀 Initializing MCP agent...
+2025-04-20T17:33:58.195Z - mcp_use - DEBUG - Returning 0 active sessions.
+2025-04-20T17:33:58.195Z - mcp_use - INFO - 🔌 Found 0 existing sessions
+2025-04-20T17:33:58.196Z - mcp_use - INFO - 🔄 No active sessions found, creating new ones...
+2025-04-20T17:33:58.196Z - mcp_use - INFO - Attempting to create sessions for all 1 configured servers.
+2025-04-20T17:33:58.196Z - mcp_use - DEBUG - Attempting to create session for server: 'http'
+2025-04-20T17:33:58.196Z - mcp_use - DEBUG - Attempting to create connector from config: {"url":"http://127.0.0.1:3000/sse"}
+2025-04-20T17:33:58.196Z - mcp_use - INFO - Inferred HttpConnector type.
+2025-04-20T17:33:58.235Z - mcp_use - INFO - Connector created for server 'http' with type '[object Object]'.
+2025-04-20T17:33:58.235Z - mcp_use - INFO - MCPSession instance created for server 'http'.
+2025-04-20T17:33:58.235Z - mcp_use - DEBUG - Auto-initializing session for server 'http'...
+2025-04-20T17:33:58.235Z - mcp_use - DEBUG - MCPSession: Initializing session...
+2025-04-20T17:33:58.235Z - mcp_use - DEBUG - MCPSession: Auto-connecting before initialization.
+2025-04-20T17:33:58.235Z - mcp_use - DEBUG - MCPSession: Connecting...
+2025-04-20T17:33:58.235Z - mcp_use - DEBUG - MCPSession: Connector connected.
+2025-04-20T17:33:58.236Z - mcp_use - DEBUG - BaseConnector: Initializing MCP session...
+2025-04-20T17:33:58.236Z - mcp_use - DEBUG - BaseConnector: MCP session initialized, fetching tools...
+2025-04-20T17:33:58.238Z - mcp_use - INFO - BaseConnector: Initialization complete. Discovered 2 tools.
+2025-04-20T17:33:58.239Z - mcp_use - DEBUG - MCPSession: Discovering tools...
+2025-04-20T17:33:58.239Z - mcp_use - INFO - MCPSession: Discovered 2 tools.
+2025-04-20T17:33:58.239Z - mcp_use - DEBUG - MCPSession: Discovered tools: [{"name":"calculator","description":"Perform basic mathematical operations","inputSchema":{"type":"object","properties":{"operation":{"type":"string","enum":["add","subtract","multiply","divide"],"description":"The mathematical operation to perform"},"a":{"type":"number","description":"First operand"},"b":{"type":"number","description":"Second operand"}},"required":["operation","a","b"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"weather-info","description":"Get static weather information for a city","inputSchema":{"type":"object","properties":{"city":{"type":"string","description":"Name of the city to get weather information for"}},"required":["city"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}}]
+2025-04-20T17:33:58.239Z - mcp_use - INFO - Session for server 'http' initialized successfully.
+2025-04-20T17:33:58.239Z - mcp_use - DEBUG - Server 'http' added to active sessions.
+2025-04-20T17:33:58.239Z - mcp_use - INFO - Finished creating sessions. 1 sessions successfully created/added.
+2025-04-20T17:33:58.239Z - mcp_use - DEBUG - Returning 1 active sessions.
+2025-04-20T17:33:58.239Z - mcp_use - INFO - ✅ Created/found 1 sessions
+2025-04-20T17:33:58.239Z - mcp_use - INFO - MCP tool: "calculator" arguments: {"type":"object","properties":{"operation":{"type":"string","enum":["add","subtract","multiply","divide"],"description":"The mathematical operation to perform"},"a":{"type":"number","description":"First operand"},"b":{"type":"number","description":"Second operand"}},"required":["operation","a","b"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:33:58.239Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:33:58.239Z - mcp_use - INFO - MCP tool: "weather-info" arguments: {"type":"object","properties":{"city":{"type":"string","description":"Name of the city to get weather information for"}},"required":["city"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:33:58.239Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:33:58.239Z - mcp_use - DEBUG - Loaded 2 new tools for connector: calculator, weather-info
+2025-04-20T17:33:58.239Z - mcp_use - INFO - Total LangChain tools created: 2
+2025-04-20T17:33:58.240Z - mcp_use - INFO - 🛠️ Created 2 LangChain tools
+2025-04-20T17:33:58.240Z - mcp_use - WARNING - Using placeholder createSystemMessage function.
+2025-04-20T17:33:58.240Z - mcp_use - DEBUG - Creating new agent with 2 tools
+2025-04-20T17:33:58.241Z - mcp_use - INFO - ✨ Agent initialization complete
+2025-04-20T17:33:58.241Z - mcp_use - INFO - 🏃 Running agent with query: "
+      what is the weather like in New York?
+      "
+2025-04-20T17:34:00.532Z - mcp_use - DEBUG - MCP tool: "weather-info" received input: {"city":"New York"}
+2025-04-20T17:34:00.533Z - mcp_use - DEBUG - BaseConnector: Calling tool 'weather-info' with arguments: {"city":"New York"}
+2025-04-20T17:34:00.536Z - mcp_use - DEBUG - BaseConnector: Tool 'weather-info' call result: {"content":[{"type":"text","text":"Weather for New York:\nTemperature: 72°F\nCondition: Partly Cloudy\nHumidity: 65%"}]}
+2025-04-20T17:34:00.536Z - mcp_use - DEBUG - CP tool get result : {"content":[{"type":"text","text":"Weather for New York:\nTemperature: 72°F\nCondition: Partly Cloudy\nHumidity: 65%"}]}
+2025-04-20T17:34:02.819Z - mcp_use - INFO - 🏁 Agent finished. Output: OK. The weather in New York is partly cloudy with a temperature of 72°F and 65% humidity.
+
+2025-04-20T17:37:09.780Z - mcp_use - INFO - 🚀 Initializing MCP agent...
+2025-04-20T17:37:09.786Z - mcp_use - DEBUG - Returning 0 active sessions.
+2025-04-20T17:37:09.786Z - mcp_use - INFO - 🔌 Found 0 existing sessions
+2025-04-20T17:37:09.787Z - mcp_use - INFO - 🔄 No active sessions found, creating new ones...
+2025-04-20T17:37:09.787Z - mcp_use - INFO - Attempting to create sessions for all 1 configured servers.
+2025-04-20T17:37:09.787Z - mcp_use - DEBUG - Attempting to create session for server: 'n8n'
+2025-04-20T17:37:09.788Z - mcp_use - DEBUG - Attempting to create connector from config: {"command":"npx","args":["-y","supergateway","--sse","https://n8n.souryax.tech/mcp/tutorial/sse"]}
+2025-04-20T17:37:09.789Z - mcp_use - INFO - Inferred StdioConnector type.
+2025-04-20T17:37:12.300Z - mcp_use - ERROR - Failed to create connector for server 'n8n': MCP error 404: SSE error: Non-200 status code (404)
+2025-04-20T17:37:12.301Z - mcp_use - ERROR - Failed to create or initialize session for server 'n8n': MCP error 404: SSE error: Non-200 status code (404)
+2025-04-20T17:37:12.301Z - mcp_use - INFO - Finished creating sessions. 0 sessions successfully created/added.
+2025-04-20T17:37:12.301Z - mcp_use - DEBUG - Returning 0 active sessions.
+2025-04-20T17:37:12.301Z - mcp_use - INFO - ✅ Created/found 0 sessions
+2025-04-20T17:37:12.301Z - mcp_use - INFO - Total LangChain tools created: 0
+2025-04-20T17:37:12.301Z - mcp_use - INFO - 🛠️ Created 0 LangChain tools
+2025-04-20T17:37:12.301Z - mcp_use - WARNING - Using placeholder createSystemMessage function.
+2025-04-20T17:37:12.302Z - mcp_use - DEBUG - Creating new agent with 0 tools
+2025-04-20T17:37:12.304Z - mcp_use - INFO - ✨ Agent initialization complete
+2025-04-20T17:37:12.304Z - mcp_use - INFO - 🏃 Running agent with query: "
+      what are my todos?
+      "
+2025-04-20T17:37:15.626Z - mcp_use - INFO - 🏁 Agent finished. Output: I need access to your task list to tell you what your todos are. Do you have a preferred task management tool (e.g., Google Tasks, Todoist, Microsoft To Do, or a different app)? Or, would you like me to create a simple list for you here?
+
+2025-04-20T17:38:01.056Z - mcp_use - INFO - 🚀 Initializing MCP agent...
+2025-04-20T17:38:01.057Z - mcp_use - DEBUG - Returning 0 active sessions.
+2025-04-20T17:38:01.057Z - mcp_use - INFO - 🔌 Found 0 existing sessions
+2025-04-20T17:38:01.057Z - mcp_use - INFO - 🔄 No active sessions found, creating new ones...
+2025-04-20T17:38:01.057Z - mcp_use - INFO - Attempting to create sessions for all 1 configured servers.
+2025-04-20T17:38:01.057Z - mcp_use - DEBUG - Attempting to create session for server: 'n8n'
+2025-04-20T17:38:01.058Z - mcp_use - DEBUG - Attempting to create connector from config: {"command":"npx","args":["-y","supergateway","--sse","https://n8n.souryax.tech/mcp/debu/sse"]}
+2025-04-20T17:38:01.058Z - mcp_use - INFO - Inferred StdioConnector type.
+2025-04-20T17:38:03.296Z - mcp_use - INFO - Connector created for server 'n8n' with type '[object Object]'.
+2025-04-20T17:38:03.296Z - mcp_use - INFO - MCPSession instance created for server 'n8n'.
+2025-04-20T17:38:03.297Z - mcp_use - DEBUG - Auto-initializing session for server 'n8n'...
+2025-04-20T17:38:03.297Z - mcp_use - DEBUG - MCPSession: Initializing session...
+2025-04-20T17:38:03.297Z - mcp_use - DEBUG - MCPSession: Auto-connecting before initialization.
+2025-04-20T17:38:03.297Z - mcp_use - DEBUG - MCPSession: Connecting...
+2025-04-20T17:38:03.298Z - mcp_use - DEBUG - MCPSession: Connector connected.
+2025-04-20T17:38:03.298Z - mcp_use - DEBUG - BaseConnector: Initializing MCP session...
+2025-04-20T17:38:03.298Z - mcp_use - DEBUG - BaseConnector: MCP session initialized, fetching tools...
+2025-04-20T17:38:03.517Z - mcp_use - INFO - BaseConnector: Initialization complete. Discovered 5 tools.
+2025-04-20T17:38:03.518Z - mcp_use - DEBUG - MCPSession: Discovering tools...
+2025-04-20T17:38:03.518Z - mcp_use - INFO - MCPSession: Discovered 5 tools.
+2025-04-20T17:38:03.518Z - mcp_use - DEBUG - MCPSession: Discovered tools: [{"name":"Update_Todo","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: update","inputSchema":{"type":"object","properties":{"Completed":{"type":"boolean"},"id__using_to_match_":{"type":"string","description":"Airtable record ID, usually in format \"recSde9B6TPdonnzw\""},"Name":{"type":"string"}},"required":["Completed","id__using_to_match_","Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"Add_Todo","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: create","inputSchema":{"type":"object","properties":{"Name":{"type":"string"}},"required":["Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"List_Todos","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: search","inputSchema":{"type":"object","properties":{},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"create_social_media_content","description":"Use this tool when creating social media posts.","inputSchema":{"type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"calculator","description":"Useful for getting the result of a math expression. The input to this tool should be a valid mathematical expression that could be executed by a simple calculator.","inputSchema":{"type":"object","properties":{"input":{"type":"string"}},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}}]
+2025-04-20T17:38:03.518Z - mcp_use - INFO - Session for server 'n8n' initialized successfully.
+2025-04-20T17:38:03.518Z - mcp_use - DEBUG - Server 'n8n' added to active sessions.
+2025-04-20T17:38:03.518Z - mcp_use - INFO - Finished creating sessions. 1 sessions successfully created/added.
+2025-04-20T17:38:03.518Z - mcp_use - DEBUG - Returning 1 active sessions.
+2025-04-20T17:38:03.518Z - mcp_use - INFO - ✅ Created/found 1 sessions
+2025-04-20T17:38:03.518Z - mcp_use - INFO - MCP tool: "Update_Todo" arguments: {"type":"object","properties":{"Completed":{"type":"boolean"},"id__using_to_match_":{"type":"string","description":"Airtable record ID, usually in format \"recSde9B6TPdonnzw\""},"Name":{"type":"string"}},"required":["Completed","id__using_to_match_","Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:38:03.519Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:38:03.519Z - mcp_use - INFO - MCP tool: "Add_Todo" arguments: {"type":"object","properties":{"Name":{"type":"string"}},"required":["Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:38:03.519Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:38:03.519Z - mcp_use - INFO - MCP tool: "List_Todos" arguments: {"type":"object","properties":{},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:38:03.519Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:38:03.519Z - mcp_use - INFO - MCP tool: "create_social_media_content" arguments: {"type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:38:03.519Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:38:03.519Z - mcp_use - INFO - MCP tool: "calculator" arguments: {"type":"object","properties":{"input":{"type":"string"}},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:38:03.519Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:38:03.519Z - mcp_use - DEBUG - Loaded 5 new tools for connector: Update_Todo, Add_Todo, List_Todos, create_social_media_content, calculator
+2025-04-20T17:38:03.519Z - mcp_use - INFO - Total LangChain tools created: 5
+2025-04-20T17:38:03.519Z - mcp_use - INFO - 🛠️ Created 5 LangChain tools
+2025-04-20T17:38:03.519Z - mcp_use - WARNING - Using placeholder createSystemMessage function.
+2025-04-20T17:38:03.519Z - mcp_use - DEBUG - Creating new agent with 5 tools
+2025-04-20T17:38:03.522Z - mcp_use - INFO - ✨ Agent initialization complete
+2025-04-20T17:38:03.522Z - mcp_use - INFO - 🏃 Running agent with query: "
+      what are my todos?
+      "
+2025-04-20T17:38:08.029Z - mcp_use - DEBUG - MCP tool: "List_Todos" received input: {}
+2025-04-20T17:38:08.030Z - mcp_use - DEBUG - BaseConnector: Calling tool 'List_Todos' with arguments: {}
+2025-04-20T17:38:10.443Z - mcp_use - DEBUG - BaseConnector: Tool 'List_Todos' call result: {"content":[{"type":"text","text":"[{\"id\":\"rec3Drg2zp2rCNhVR\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Vibe Code\"},{\"id\":\"recTJx8XDL8bn5tpl\",\"createdTime\":\"2025-04-11T18:28:24.000Z\",\"Name\":\"Listen to Podcast\"},{\"id\":\"recbVshnW0Mo3pHE2\",\"createdTime\":\"2025-04-11T18:49:22.000Z\",\"Name\":\"Buy books\"},{\"id\":\"recnwfw4SlspJ0cRr\",\"createdTime\":\"2025-04-11T19:01:36.000Z\",\"Name\":\"Test Todo\"},{\"id\":\"recnz5QaIJ1hLJuxk\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Buy Mac\",\"Completed\":true},{\"id\":\"recqthBQOveNt7hX2\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Go to Market\",\"Completed\":true}]"}]}
+2025-04-20T17:38:10.444Z - mcp_use - DEBUG - CP tool get result : {"content":[{"type":"text","text":"[{\"id\":\"rec3Drg2zp2rCNhVR\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Vibe Code\"},{\"id\":\"recTJx8XDL8bn5tpl\",\"createdTime\":\"2025-04-11T18:28:24.000Z\",\"Name\":\"Listen to Podcast\"},{\"id\":\"recbVshnW0Mo3pHE2\",\"createdTime\":\"2025-04-11T18:49:22.000Z\",\"Name\":\"Buy books\"},{\"id\":\"recnwfw4SlspJ0cRr\",\"createdTime\":\"2025-04-11T19:01:36.000Z\",\"Name\":\"Test Todo\"},{\"id\":\"recnz5QaIJ1hLJuxk\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Buy Mac\",\"Completed\":true},{\"id\":\"recqthBQOveNt7hX2\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Go to Market\",\"Completed\":true}]"}]}
+2025-04-20T17:38:13.441Z - mcp_use - INFO - 🏁 Agent finished. Output: OK. I found these todos: Vibe Code, Listen to Podcast, Buy books, Test Todo, Buy Mac, and Go to Market. The last two are completed.
+
+2025-04-20T17:41:23.141Z - mcp_use - INFO - 🚀 Initializing MCP agent...
+2025-04-20T17:41:23.148Z - mcp_use - DEBUG - Returning 0 active sessions.
+2025-04-20T17:41:23.148Z - mcp_use - INFO - 🔌 Found 0 existing sessions
+2025-04-20T17:41:23.148Z - mcp_use - INFO - 🔄 No active sessions found, creating new ones...
+2025-04-20T17:41:23.148Z - mcp_use - INFO - Attempting to create sessions for all 1 configured servers.
+2025-04-20T17:41:23.148Z - mcp_use - DEBUG - Attempting to create session for server: 'n8n'
+2025-04-20T17:41:23.148Z - mcp_use - DEBUG - Attempting to create connector from config: {"command":"npx","args":["-y","supergateway","--sse","https://n8n.souryax.tech/mcp/debu/sse"]}
+2025-04-20T17:41:23.149Z - mcp_use - INFO - Inferred StdioConnector type.
+2025-04-20T17:41:26.095Z - mcp_use - INFO - Connector created for server 'n8n' with type '[object Object]'.
+2025-04-20T17:41:26.095Z - mcp_use - INFO - MCPSession instance created for server 'n8n'.
+2025-04-20T17:41:26.096Z - mcp_use - DEBUG - Auto-initializing session for server 'n8n'...
+2025-04-20T17:41:26.096Z - mcp_use - DEBUG - MCPSession: Initializing session...
+2025-04-20T17:41:26.096Z - mcp_use - DEBUG - MCPSession: Auto-connecting before initialization.
+2025-04-20T17:41:26.096Z - mcp_use - DEBUG - MCPSession: Connecting...
+2025-04-20T17:41:26.098Z - mcp_use - DEBUG - MCPSession: Connector connected.
+2025-04-20T17:41:26.098Z - mcp_use - DEBUG - BaseConnector: Initializing MCP session...
+2025-04-20T17:41:26.098Z - mcp_use - DEBUG - BaseConnector: MCP session initialized, fetching tools...
+2025-04-20T17:41:26.316Z - mcp_use - INFO - BaseConnector: Initialization complete. Discovered 5 tools.
+2025-04-20T17:41:26.317Z - mcp_use - DEBUG - MCPSession: Discovering tools...
+2025-04-20T17:41:26.317Z - mcp_use - INFO - MCPSession: Discovered 5 tools.
+2025-04-20T17:41:26.317Z - mcp_use - DEBUG - MCPSession: Discovered tools: [{"name":"Update_Todo","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: update","inputSchema":{"type":"object","properties":{"Completed":{"type":"boolean"},"id__using_to_match_":{"type":"string","description":"Airtable record ID, usually in format \"recSde9B6TPdonnzw\""},"Name":{"type":"string"}},"required":["Completed","id__using_to_match_","Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"Add_Todo","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: create","inputSchema":{"type":"object","properties":{"Name":{"type":"string"}},"required":["Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"List_Todos","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: search","inputSchema":{"type":"object","properties":{},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"create_social_media_content","description":"Use this tool when creating social media posts.","inputSchema":{"type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"calculator","description":"Useful for getting the result of a math expression. The input to this tool should be a valid mathematical expression that could be executed by a simple calculator.","inputSchema":{"type":"object","properties":{"input":{"type":"string"}},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}}]
+2025-04-20T17:41:26.317Z - mcp_use - INFO - Session for server 'n8n' initialized successfully.
+2025-04-20T17:41:26.317Z - mcp_use - DEBUG - Server 'n8n' added to active sessions.
+2025-04-20T17:41:26.317Z - mcp_use - INFO - Finished creating sessions. 1 sessions successfully created/added.
+2025-04-20T17:41:26.317Z - mcp_use - DEBUG - Returning 1 active sessions.
+2025-04-20T17:41:26.317Z - mcp_use - INFO - ✅ Created/found 1 sessions
+2025-04-20T17:41:26.317Z - mcp_use - INFO - MCP tool: "Update_Todo" arguments: {"type":"object","properties":{"Completed":{"type":"boolean"},"id__using_to_match_":{"type":"string","description":"Airtable record ID, usually in format \"recSde9B6TPdonnzw\""},"Name":{"type":"string"}},"required":["Completed","id__using_to_match_","Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:41:26.317Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:41:26.317Z - mcp_use - INFO - MCP tool: "Add_Todo" arguments: {"type":"object","properties":{"Name":{"type":"string"}},"required":["Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:41:26.318Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:41:26.318Z - mcp_use - INFO - MCP tool: "List_Todos" arguments: {"type":"object","properties":{},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:41:26.318Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:41:26.318Z - mcp_use - INFO - MCP tool: "create_social_media_content" arguments: {"type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:41:26.318Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:41:26.318Z - mcp_use - INFO - MCP tool: "calculator" arguments: {"type":"object","properties":{"input":{"type":"string"}},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:41:26.318Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:41:26.318Z - mcp_use - DEBUG - Loaded 5 new tools for connector: Update_Todo, Add_Todo, List_Todos, create_social_media_content, calculator
+2025-04-20T17:41:26.318Z - mcp_use - INFO - Total LangChain tools created: 5
+2025-04-20T17:41:26.318Z - mcp_use - INFO - 🛠️ Created 5 LangChain tools
+2025-04-20T17:41:26.318Z - mcp_use - WARNING - Using placeholder createSystemMessage function.
+2025-04-20T17:41:26.318Z - mcp_use - DEBUG - Creating new agent with 5 tools
+2025-04-20T17:41:26.320Z - mcp_use - INFO - ✨ Agent initialization complete
+2025-04-20T17:41:26.320Z - mcp_use - INFO - 🏃 Running agent with query: "
+      what are my todos?
+      "
+2025-04-20T17:41:31.278Z - mcp_use - DEBUG - MCP tool: "List_Todos" received input: {}
+2025-04-20T17:41:31.278Z - mcp_use - DEBUG - BaseConnector: Calling tool 'List_Todos' with arguments: {}
+2025-04-20T17:41:33.445Z - mcp_use - DEBUG - BaseConnector: Tool 'List_Todos' call result: {"content":[{"type":"text","text":"[{\"id\":\"rec3Drg2zp2rCNhVR\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Vibe Code\"},{\"id\":\"recTJx8XDL8bn5tpl\",\"createdTime\":\"2025-04-11T18:28:24.000Z\",\"Name\":\"Listen to Podcast\"},{\"id\":\"recbVshnW0Mo3pHE2\",\"createdTime\":\"2025-04-11T18:49:22.000Z\",\"Name\":\"Buy books\"},{\"id\":\"recnwfw4SlspJ0cRr\",\"createdTime\":\"2025-04-11T19:01:36.000Z\",\"Name\":\"Test Todo\"},{\"id\":\"recnz5QaIJ1hLJuxk\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Buy Mac\",\"Completed\":true},{\"id\":\"recqthBQOveNt7hX2\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Go to Market\",\"Completed\":true}]"}]}
+2025-04-20T17:41:33.446Z - mcp_use - DEBUG - CP tool get result : {"content":[{"type":"text","text":"[{\"id\":\"rec3Drg2zp2rCNhVR\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Vibe Code\"},{\"id\":\"recTJx8XDL8bn5tpl\",\"createdTime\":\"2025-04-11T18:28:24.000Z\",\"Name\":\"Listen to Podcast\"},{\"id\":\"recbVshnW0Mo3pHE2\",\"createdTime\":\"2025-04-11T18:49:22.000Z\",\"Name\":\"Buy books\"},{\"id\":\"recnwfw4SlspJ0cRr\",\"createdTime\":\"2025-04-11T19:01:36.000Z\",\"Name\":\"Test Todo\"},{\"id\":\"recnz5QaIJ1hLJuxk\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Buy Mac\",\"Completed\":true},{\"id\":\"recqthBQOveNt7hX2\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Go to Market\",\"Completed\":true}]"}]}
+2025-04-20T17:41:35.922Z - mcp_use - INFO - 🏁 Agent finished. Output: OK. I found these todos: Vibe Code, Listen to Podcast, Buy books, Test Todo, Buy Mac, and Go to Market. The last two are completed.
+
+2025-04-20T17:43:44.588Z - mcp_use - INFO - 🚀 Initializing MCP agent...
+2025-04-20T17:43:44.589Z - mcp_use - DEBUG - Returning 0 active sessions.
+2025-04-20T17:43:44.589Z - mcp_use - INFO - 🔌 Found 0 existing sessions
+2025-04-20T17:43:44.589Z - mcp_use - INFO - 🔄 No active sessions found, creating new ones...
+2025-04-20T17:43:44.589Z - mcp_use - INFO - Attempting to create sessions for all 1 configured servers.
+2025-04-20T17:43:44.590Z - mcp_use - DEBUG - Attempting to create session for server: 'n8n'
+2025-04-20T17:43:44.590Z - mcp_use - DEBUG - Attempting to create connector from config: {"command":"npx","args":["-y","supergateway","--sse","https://n8n.souryax.tech/mcp/debu/sse"]}
+2025-04-20T17:43:44.590Z - mcp_use - INFO - Inferred StdioConnector type.
+2025-04-20T17:43:48.246Z - mcp_use - INFO - Connector created for server 'n8n' with type '[object Object]'.
+2025-04-20T17:43:48.248Z - mcp_use - INFO - MCPSession instance created for server 'n8n'.
+2025-04-20T17:43:48.249Z - mcp_use - DEBUG - Auto-initializing session for server 'n8n'...
+2025-04-20T17:43:48.249Z - mcp_use - DEBUG - MCPSession: Initializing session...
+2025-04-20T17:43:48.249Z - mcp_use - DEBUG - MCPSession: Auto-connecting before initialization.
+2025-04-20T17:43:48.249Z - mcp_use - DEBUG - MCPSession: Connecting...
+2025-04-20T17:43:48.251Z - mcp_use - DEBUG - MCPSession: Connector connected.
+2025-04-20T17:43:48.252Z - mcp_use - DEBUG - BaseConnector: Initializing MCP session...
+2025-04-20T17:43:48.252Z - mcp_use - DEBUG - BaseConnector: MCP session initialized, fetching tools...
+2025-04-20T17:43:48.499Z - mcp_use - INFO - BaseConnector: Initialization complete. Discovered 5 tools.
+2025-04-20T17:43:48.499Z - mcp_use - DEBUG - MCPSession: Discovering tools...
+2025-04-20T17:43:48.499Z - mcp_use - INFO - MCPSession: Discovered 5 tools.
+2025-04-20T17:43:48.499Z - mcp_use - DEBUG - MCPSession: Discovered tools: [{"name":"Update_Todo","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: update","inputSchema":{"type":"object","properties":{"Completed":{"type":"boolean"},"id__using_to_match_":{"type":"string","description":"Airtable record ID, usually in format \"recSde9B6TPdonnzw\""},"Name":{"type":"string"}},"required":["Completed","id__using_to_match_","Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"Add_Todo","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: create","inputSchema":{"type":"object","properties":{"Name":{"type":"string"}},"required":["Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"List_Todos","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: search","inputSchema":{"type":"object","properties":{},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"create_social_media_content","description":"Use this tool when creating social media posts.","inputSchema":{"type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"calculator","description":"Useful for getting the result of a math expression. The input to this tool should be a valid mathematical expression that could be executed by a simple calculator.","inputSchema":{"type":"object","properties":{"input":{"type":"string"}},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}}]
+2025-04-20T17:43:48.499Z - mcp_use - INFO - Session for server 'n8n' initialized successfully.
+2025-04-20T17:43:48.499Z - mcp_use - DEBUG - Server 'n8n' added to active sessions.
+2025-04-20T17:43:48.499Z - mcp_use - INFO - Finished creating sessions. 1 sessions successfully created/added.
+2025-04-20T17:43:48.499Z - mcp_use - DEBUG - Returning 1 active sessions.
+2025-04-20T17:43:48.499Z - mcp_use - INFO - ✅ Created/found 1 sessions
+2025-04-20T17:43:48.500Z - mcp_use - INFO - MCP tool: "Update_Todo" arguments: {"type":"object","properties":{"Completed":{"type":"boolean"},"id__using_to_match_":{"type":"string","description":"Airtable record ID, usually in format \"recSde9B6TPdonnzw\""},"Name":{"type":"string"}},"required":["Completed","id__using_to_match_","Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:43:48.500Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:43:48.500Z - mcp_use - INFO - MCP tool: "Add_Todo" arguments: {"type":"object","properties":{"Name":{"type":"string"}},"required":["Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:43:48.500Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:43:48.500Z - mcp_use - INFO - MCP tool: "List_Todos" arguments: {"type":"object","properties":{},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:43:48.500Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:43:48.500Z - mcp_use - INFO - MCP tool: "create_social_media_content" arguments: {"type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:43:48.500Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:43:48.500Z - mcp_use - INFO - MCP tool: "calculator" arguments: {"type":"object","properties":{"input":{"type":"string"}},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:43:48.500Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:43:48.500Z - mcp_use - DEBUG - Loaded 5 new tools for connector: Update_Todo, Add_Todo, List_Todos, create_social_media_content, calculator
+2025-04-20T17:43:48.500Z - mcp_use - INFO - Total LangChain tools created: 5
+2025-04-20T17:43:48.501Z - mcp_use - INFO - 🛠️ Created 5 LangChain tools
+2025-04-20T17:43:48.501Z - mcp_use - WARNING - Using placeholder createSystemMessage function.
+2025-04-20T17:43:48.501Z - mcp_use - DEBUG - Creating new agent with 5 tools
+2025-04-20T17:43:48.504Z - mcp_use - INFO - ✨ Agent initialization complete
+2025-04-20T17:43:48.504Z - mcp_use - INFO - 🏃 Running agent with query: "
+      what are my todos?
+      "
+2025-04-20T17:43:53.000Z - mcp_use - DEBUG - MCP tool: "List_Todos" received input: {}
+2025-04-20T17:43:53.000Z - mcp_use - DEBUG - BaseConnector: Calling tool 'List_Todos' with arguments: {}
+2025-04-20T17:43:54.309Z - mcp_use - DEBUG - BaseConnector: Tool 'List_Todos' call result: {"content":[{"type":"text","text":"[{\"id\":\"rec3Drg2zp2rCNhVR\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Vibe Code\"},{\"id\":\"recTJx8XDL8bn5tpl\",\"createdTime\":\"2025-04-11T18:28:24.000Z\",\"Name\":\"Listen to Podcast\"},{\"id\":\"recbVshnW0Mo3pHE2\",\"createdTime\":\"2025-04-11T18:49:22.000Z\",\"Name\":\"Buy books\"},{\"id\":\"recnwfw4SlspJ0cRr\",\"createdTime\":\"2025-04-11T19:01:36.000Z\",\"Name\":\"Test Todo\"},{\"id\":\"recnz5QaIJ1hLJuxk\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Buy Mac\",\"Completed\":true},{\"id\":\"recqthBQOveNt7hX2\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Go to Market\",\"Completed\":true}]"}]}
+2025-04-20T17:43:54.309Z - mcp_use - DEBUG - CP tool get result : {"content":[{"type":"text","text":"[{\"id\":\"rec3Drg2zp2rCNhVR\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Vibe Code\"},{\"id\":\"recTJx8XDL8bn5tpl\",\"createdTime\":\"2025-04-11T18:28:24.000Z\",\"Name\":\"Listen to Podcast\"},{\"id\":\"recbVshnW0Mo3pHE2\",\"createdTime\":\"2025-04-11T18:49:22.000Z\",\"Name\":\"Buy books\"},{\"id\":\"recnwfw4SlspJ0cRr\",\"createdTime\":\"2025-04-11T19:01:36.000Z\",\"Name\":\"Test Todo\"},{\"id\":\"recnz5QaIJ1hLJuxk\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Buy Mac\",\"Completed\":true},{\"id\":\"recqthBQOveNt7hX2\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Go to Market\",\"Completed\":true}]"}]}
+2025-04-20T17:43:58.131Z - mcp_use - INFO - 🏁 Agent finished. Output: OK. Here are your todos: Vibe Code, Listen to Podcast, Buy books, Test Todo, Buy Mac, and Go to Market. The last two are already completed.
+
+2025-04-20T17:44:58.879Z - mcp_use - INFO - 🚀 Initializing MCP agent...
+2025-04-20T17:44:58.885Z - mcp_use - DEBUG - Returning 0 active sessions.
+2025-04-20T17:44:58.885Z - mcp_use - INFO - 🔌 Found 0 existing sessions
+2025-04-20T17:44:58.885Z - mcp_use - INFO - 🔄 No active sessions found, creating new ones...
+2025-04-20T17:44:58.885Z - mcp_use - INFO - Attempting to create sessions for all 1 configured servers.
+2025-04-20T17:44:58.885Z - mcp_use - DEBUG - Attempting to create session for server: 'n8n'
+2025-04-20T17:44:58.886Z - mcp_use - DEBUG - Attempting to create connector from config: {"command":"npx","args":["-y","supergateway","--sse","https://n8n.souryax.tech/mcp/debu/sse"]}
+2025-04-20T17:44:58.886Z - mcp_use - INFO - Inferred StdioConnector type.
+2025-04-20T17:45:02.465Z - mcp_use - INFO - Connector created for server 'n8n' with type '[object Object]'.
+2025-04-20T17:45:02.466Z - mcp_use - INFO - MCPSession instance created for server 'n8n'.
+2025-04-20T17:45:02.466Z - mcp_use - DEBUG - Auto-initializing session for server 'n8n'...
+2025-04-20T17:45:02.466Z - mcp_use - DEBUG - MCPSession: Initializing session...
+2025-04-20T17:45:02.466Z - mcp_use - DEBUG - MCPSession: Auto-connecting before initialization.
+2025-04-20T17:45:02.466Z - mcp_use - DEBUG - MCPSession: Connecting...
+2025-04-20T17:45:02.468Z - mcp_use - DEBUG - MCPSession: Connector connected.
+2025-04-20T17:45:02.468Z - mcp_use - DEBUG - BaseConnector: Initializing MCP session...
+2025-04-20T17:45:02.468Z - mcp_use - DEBUG - BaseConnector: MCP session initialized, fetching tools...
+2025-04-20T17:45:02.903Z - mcp_use - INFO - BaseConnector: Initialization complete. Discovered 5 tools.
+2025-04-20T17:45:02.903Z - mcp_use - DEBUG - MCPSession: Discovering tools...
+2025-04-20T17:45:02.903Z - mcp_use - INFO - MCPSession: Discovered 5 tools.
+2025-04-20T17:45:02.903Z - mcp_use - DEBUG - MCPSession: Discovered tools: [{"name":"Update_Todo","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: update","inputSchema":{"type":"object","properties":{"Completed":{"type":"boolean"},"id__using_to_match_":{"type":"string","description":"Airtable record ID, usually in format \"recSde9B6TPdonnzw\""},"Name":{"type":"string"}},"required":["Completed","id__using_to_match_","Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"Add_Todo","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: create","inputSchema":{"type":"object","properties":{"Name":{"type":"string"}},"required":["Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"List_Todos","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: search","inputSchema":{"type":"object","properties":{},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"create_social_media_content","description":"Use this tool when creating social media posts.","inputSchema":{"type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"calculator","description":"Useful for getting the result of a math expression. The input to this tool should be a valid mathematical expression that could be executed by a simple calculator.","inputSchema":{"type":"object","properties":{"input":{"type":"string"}},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}}]
+2025-04-20T17:45:02.903Z - mcp_use - INFO - Session for server 'n8n' initialized successfully.
+2025-04-20T17:45:02.903Z - mcp_use - DEBUG - Server 'n8n' added to active sessions.
+2025-04-20T17:45:02.903Z - mcp_use - INFO - Finished creating sessions. 1 sessions successfully created/added.
+2025-04-20T17:45:02.904Z - mcp_use - DEBUG - Returning 1 active sessions.
+2025-04-20T17:45:02.904Z - mcp_use - INFO - ✅ Created/found 1 sessions
+2025-04-20T17:45:02.904Z - mcp_use - INFO - MCP tool: "Update_Todo" arguments: {"type":"object","properties":{"Completed":{"type":"boolean"},"id__using_to_match_":{"type":"string","description":"Airtable record ID, usually in format \"recSde9B6TPdonnzw\""},"Name":{"type":"string"}},"required":["Completed","id__using_to_match_","Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:45:02.904Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:45:02.904Z - mcp_use - INFO - MCP tool: "Add_Todo" arguments: {"type":"object","properties":{"Name":{"type":"string"}},"required":["Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:45:02.905Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:45:02.905Z - mcp_use - INFO - MCP tool: "List_Todos" arguments: {"type":"object","properties":{},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:45:02.905Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:45:02.905Z - mcp_use - INFO - MCP tool: "create_social_media_content" arguments: {"type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:45:02.905Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:45:02.905Z - mcp_use - INFO - MCP tool: "calculator" arguments: {"type":"object","properties":{"input":{"type":"string"}},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:45:02.905Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:45:02.905Z - mcp_use - DEBUG - Loaded 5 new tools for connector: Update_Todo, Add_Todo, List_Todos, create_social_media_content, calculator
+2025-04-20T17:45:02.905Z - mcp_use - INFO - Total LangChain tools created: 5
+2025-04-20T17:45:02.905Z - mcp_use - INFO - 🛠️ Created 5 LangChain tools
+2025-04-20T17:45:02.905Z - mcp_use - WARNING - Using placeholder createSystemMessage function.
+2025-04-20T17:45:02.906Z - mcp_use - DEBUG - Creating new agent with 5 tools
+2025-04-20T17:45:02.908Z - mcp_use - INFO - ✨ Agent initialization complete
+2025-04-20T17:45:02.908Z - mcp_use - INFO - 🏃 Running agent with query: "
+      what are my todos?
+      "
+2025-04-20T17:45:05.538Z - mcp_use - DEBUG - MCP tool: "List_Todos" received input: {}
+2025-04-20T17:45:05.538Z - mcp_use - DEBUG - BaseConnector: Calling tool 'List_Todos' with arguments: {}
+2025-04-20T17:45:06.911Z - mcp_use - DEBUG - BaseConnector: Tool 'List_Todos' call result: {"content":[{"type":"text","text":"[{\"id\":\"rec3Drg2zp2rCNhVR\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Vibe Code\"},{\"id\":\"recTJx8XDL8bn5tpl\",\"createdTime\":\"2025-04-11T18:28:24.000Z\",\"Name\":\"Listen to Podcast\"},{\"id\":\"recbVshnW0Mo3pHE2\",\"createdTime\":\"2025-04-11T18:49:22.000Z\",\"Name\":\"Buy books\"},{\"id\":\"recnwfw4SlspJ0cRr\",\"createdTime\":\"2025-04-11T19:01:36.000Z\",\"Name\":\"Test Todo\"},{\"id\":\"recnz5QaIJ1hLJuxk\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Buy Mac\",\"Completed\":true},{\"id\":\"recqthBQOveNt7hX2\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Go to Market\",\"Completed\":true}]"}]}
+2025-04-20T17:45:06.912Z - mcp_use - DEBUG - CP tool get result : {"content":[{"type":"text","text":"[{\"id\":\"rec3Drg2zp2rCNhVR\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Vibe Code\"},{\"id\":\"recTJx8XDL8bn5tpl\",\"createdTime\":\"2025-04-11T18:28:24.000Z\",\"Name\":\"Listen to Podcast\"},{\"id\":\"recbVshnW0Mo3pHE2\",\"createdTime\":\"2025-04-11T18:49:22.000Z\",\"Name\":\"Buy books\"},{\"id\":\"recnwfw4SlspJ0cRr\",\"createdTime\":\"2025-04-11T19:01:36.000Z\",\"Name\":\"Test Todo\"},{\"id\":\"recnz5QaIJ1hLJuxk\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Buy Mac\",\"Completed\":true},{\"id\":\"recqthBQOveNt7hX2\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Go to Market\",\"Completed\":true}]"}]}
+2025-04-20T17:45:09.827Z - mcp_use - INFO - 🏁 Agent finished. Output: OK. Here are your todos: Vibe Code, Listen to Podcast, Buy books, Test Todo, Buy Mac, and Go to Market. Buy Mac and Go to Market are completed.
+
+2025-04-20T17:48:51.048Z - mcp_use - INFO - 🚀 Initializing MCP agent...
+2025-04-20T17:48:51.060Z - mcp_use - DEBUG - Returning 0 active sessions.
+2025-04-20T17:48:51.060Z - mcp_use - INFO - 🔌 Found 0 existing sessions
+2025-04-20T17:48:51.060Z - mcp_use - INFO - 🔄 No active sessions found, creating new ones...
+2025-04-20T17:48:51.060Z - mcp_use - INFO - Attempting to create sessions for all 1 configured servers.
+2025-04-20T17:48:51.060Z - mcp_use - DEBUG - Attempting to create session for server: 'n8n'
+2025-04-20T17:48:51.060Z - mcp_use - DEBUG - Attempting to create connector from config: {"command":"npx","args":["-y","supergateway","--sse","https://n8n.souryax.tech/mcp/debu/sse"]}
+2025-04-20T17:48:51.062Z - mcp_use - INFO - Inferred StdioConnector type.
+2025-04-20T17:48:54.363Z - mcp_use - INFO - Connector created for server 'n8n' with type '[object Object]'.
+2025-04-20T17:48:54.364Z - mcp_use - INFO - MCPSession instance created for server 'n8n'.
+2025-04-20T17:48:54.365Z - mcp_use - DEBUG - Auto-initializing session for server 'n8n'...
+2025-04-20T17:48:54.365Z - mcp_use - DEBUG - MCPSession: Initializing session...
+2025-04-20T17:48:54.365Z - mcp_use - DEBUG - MCPSession: Auto-connecting before initialization.
+2025-04-20T17:48:54.365Z - mcp_use - DEBUG - MCPSession: Connecting...
+2025-04-20T17:48:54.368Z - mcp_use - DEBUG - MCPSession: Connector connected.
+2025-04-20T17:48:54.368Z - mcp_use - DEBUG - BaseConnector: Initializing MCP session...
+2025-04-20T17:48:54.368Z - mcp_use - DEBUG - BaseConnector: MCP session initialized, fetching tools...
+2025-04-20T17:48:54.693Z - mcp_use - INFO - BaseConnector: Initialization complete. Discovered 5 tools.
+2025-04-20T17:48:54.693Z - mcp_use - DEBUG - MCPSession: Discovering tools...
+2025-04-20T17:48:54.693Z - mcp_use - INFO - MCPSession: Discovered 5 tools.
+2025-04-20T17:48:54.693Z - mcp_use - DEBUG - MCPSession: Discovered tools: [{"name":"Update_Todo","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: update","inputSchema":{"type":"object","properties":{"Completed":{"type":"boolean"},"id__using_to_match_":{"type":"string","description":"Airtable record ID, usually in format \"recSde9B6TPdonnzw\""},"Name":{"type":"string"}},"required":["Completed","id__using_to_match_","Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"Add_Todo","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: create","inputSchema":{"type":"object","properties":{"Name":{"type":"string"}},"required":["Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"List_Todos","description":"Read, update, write and delete data from Airtable\n Resource: record\n Operation: search","inputSchema":{"type":"object","properties":{},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"create_social_media_content","description":"Use this tool when creating social media posts.","inputSchema":{"type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}},{"name":"calculator","description":"Useful for getting the result of a math expression. The input to this tool should be a valid mathematical expression that could be executed by a simple calculator.","inputSchema":{"type":"object","properties":{"input":{"type":"string"}},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}}]
+2025-04-20T17:48:54.693Z - mcp_use - INFO - Session for server 'n8n' initialized successfully.
+2025-04-20T17:48:54.693Z - mcp_use - DEBUG - Server 'n8n' added to active sessions.
+2025-04-20T17:48:54.693Z - mcp_use - INFO - Finished creating sessions. 1 sessions successfully created/added.
+2025-04-20T17:48:54.693Z - mcp_use - DEBUG - Returning 1 active sessions.
+2025-04-20T17:48:54.693Z - mcp_use - INFO - ✅ Created/found 1 sessions
+2025-04-20T17:48:54.694Z - mcp_use - INFO - MCP tool: "Update_Todo" arguments: {"type":"object","properties":{"Completed":{"type":"boolean"},"id__using_to_match_":{"type":"string","description":"Airtable record ID, usually in format \"recSde9B6TPdonnzw\""},"Name":{"type":"string"}},"required":["Completed","id__using_to_match_","Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:48:54.694Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:48:54.694Z - mcp_use - INFO - MCP tool: "Add_Todo" arguments: {"type":"object","properties":{"Name":{"type":"string"}},"required":["Name"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:48:54.694Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:48:54.694Z - mcp_use - INFO - MCP tool: "List_Todos" arguments: {"type":"object","properties":{},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:48:54.694Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:48:54.694Z - mcp_use - INFO - MCP tool: "create_social_media_content" arguments: {"type":"object","properties":{"query":{"type":"string"}},"required":["query"],"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:48:54.694Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:48:54.694Z - mcp_use - INFO - MCP tool: "calculator" arguments: {"type":"object","properties":{"input":{"type":"string"}},"additionalProperties":false,"$schema":"http://json-schema.org/draft-07/schema#"}
+2025-04-20T17:48:54.695Z - mcp_use - INFO - this.schema  "z.any()"
+2025-04-20T17:48:54.695Z - mcp_use - DEBUG - Loaded 5 new tools for connector: Update_Todo, Add_Todo, List_Todos, create_social_media_content, calculator
+2025-04-20T17:48:54.695Z - mcp_use - INFO - Total LangChain tools created: 5
+2025-04-20T17:48:54.695Z - mcp_use - INFO - 🛠️ Created 5 LangChain tools
+2025-04-20T17:48:54.695Z - mcp_use - WARNING - Using placeholder createSystemMessage function.
+2025-04-20T17:48:54.695Z - mcp_use - DEBUG - Creating new agent with 5 tools
+2025-04-20T17:48:54.697Z - mcp_use - INFO - ✨ Agent initialization complete
+2025-04-20T17:48:54.697Z - mcp_use - INFO - 🏃 Running agent with query: "
+      what are my todos?
+      "
+2025-04-20T17:48:58.514Z - mcp_use - DEBUG - MCP tool: "List_Todos" received input: {}
+2025-04-20T17:48:58.515Z - mcp_use - DEBUG - BaseConnector: Calling tool 'List_Todos' with arguments: {}
+2025-04-20T17:49:00.907Z - mcp_use - DEBUG - BaseConnector: Tool 'List_Todos' call result: {"content":[{"type":"text","text":"[{\"id\":\"rec3Drg2zp2rCNhVR\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Vibe Code\"},{\"id\":\"recTJx8XDL8bn5tpl\",\"createdTime\":\"2025-04-11T18:28:24.000Z\",\"Name\":\"Listen to Podcast\"},{\"id\":\"recbVshnW0Mo3pHE2\",\"createdTime\":\"2025-04-11T18:49:22.000Z\",\"Name\":\"Buy books\"},{\"id\":\"recnwfw4SlspJ0cRr\",\"createdTime\":\"2025-04-11T19:01:36.000Z\",\"Name\":\"Test Todo\"},{\"id\":\"recnz5QaIJ1hLJuxk\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Buy Mac\",\"Completed\":true},{\"id\":\"recqthBQOveNt7hX2\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Go to Market\",\"Completed\":true}]"}]}
+2025-04-20T17:49:00.907Z - mcp_use - DEBUG - CP tool get result : {"content":[{"type":"text","text":"[{\"id\":\"rec3Drg2zp2rCNhVR\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Vibe Code\"},{\"id\":\"recTJx8XDL8bn5tpl\",\"createdTime\":\"2025-04-11T18:28:24.000Z\",\"Name\":\"Listen to Podcast\"},{\"id\":\"recbVshnW0Mo3pHE2\",\"createdTime\":\"2025-04-11T18:49:22.000Z\",\"Name\":\"Buy books\"},{\"id\":\"recnwfw4SlspJ0cRr\",\"createdTime\":\"2025-04-11T19:01:36.000Z\",\"Name\":\"Test Todo\"},{\"id\":\"recnz5QaIJ1hLJuxk\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Buy Mac\",\"Completed\":true},{\"id\":\"recqthBQOveNt7hX2\",\"createdTime\":\"2025-04-11T05:00:12.000Z\",\"Name\":\"Go to Market\",\"Completed\":true}]"}]}
+2025-04-20T17:49:04.836Z - mcp_use - INFO - 🏁 Agent finished. Output: OK. Here are your todos: Vibe Code, Listen to Podcast, Buy books, Test Todo, Buy Mac, and Go to Market. Buy Mac and Go to Market are completed.
+
